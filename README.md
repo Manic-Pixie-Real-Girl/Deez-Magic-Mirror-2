@@ -1,2 +1,4 @@
-# Deez-Magic-Mirror-2
-code for weather/time app for magic mirror
+# Deez-Magic-Mirror
+# Deez-Magic-Mirror
+# Deez-Magic-Mirror
+# Deez-Magic-Mirror

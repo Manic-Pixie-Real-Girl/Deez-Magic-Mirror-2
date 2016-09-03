@@ -1,0 +1,53 @@
+<html ng-app='mirror'>
+<head>
+  <meta charset="UTF-8">
+  <title>Magic Mirror</title>
+  <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+  <div id="weather" ng-controller='weather'>
+    <p id="summary">
+      <span id='city'>{{city}}</span>
+    </p>
+    <span id="current-weather"><skycon icon="todayicon.forecast.icon" size="todayicon.forecast.iconSize" color="todayicon.forecast.color"></skycon>{{current}}</span>
+    <br>
+    <div class="item" id="forecast">
+      <p>{{day1}}
+        <skycon icon="icon1.forecast.icon" size="icon1.forecast.iconSize" color="icon1.forecast.color"></skycon><span class="min">{{tempMin1}}</span> <span class="max">{{tempMax1}}</span></p>
+      <p>{{day2}}
+        <skycon icon="icon2.forecast.icon" size="icon2.forecast.iconSize" color="icon2.forecast.color"></skycon><span class="min">{{tempMin2}}</span> <span class="max">{{tempMax2}}</span></p>
+      <p>{{day3}}
+        <skycon icon="icon3.forecast.icon" size="icon3.forecast.iconSize" color="icon3.forecast.color"></skycon><span class="min">{{tempMin3}}</span> <span class="max">{{tempMax3}}</span></p>
+      <p>{{day4}}
+        <skycon icon="icon4.forecast.icon" size="icon4.forecast.iconSize" color="icon4.forecast.color"></skycon><span class="min">{{tempMin4}}</span> <span class="max">{{tempMax4}}</span></p>
+      <p>{{day5}}
+        <skycon icon="icon5.forecast.icon" size="icon5.forecast.iconSize" color="icon5.forecast.color"></skycon><span class="min">{{tempMin5}}</span> <span class="max">{{tempMax5}}</span></p>
+    </div>
+  </div>
+  <div id="calendar" ng-controller='calendar'>
+    <span class="item" id="date">{{day}} {{date | date: format: 'EEEE, MMMM d, y'}}</span>
+    <br>
+    <span class="item" id="time">{{time}}</span>
+    <br>
+    <div class="item" id="upcoming">
+      
+      <br>
+      <p ng-repeat='date in dates'>{{date}}</p>
+    </div>
+  </div>
+  <div id="compliments" ng-controller='compliments'>
+    <span ng-if="compliment != undefined" class="item"> {{compliment}}
+  </span>
+  </div>
+  <div class="item" id="news" ng-controller='news'>
+    <span ng-if="headline != undefined" class="item" animate-on-change='headline'>{{headline}}</span>
+  </div>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.2/angular.min.js'></script>
+  <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular-animate.js'></script>
+  <script type="text/javascript" src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/skycons/1396634940/skycons.js'></script>
+  <script src="JS/index.js"></script>
+</body>
+
+</html>
